@@ -60,15 +60,14 @@ header{
 }
 
 .imageContainer{
-    width: 40%;
-    padding: 10px;
+    width: 40%; 
     display: none;
 }
 
 .imageContainer img{
-    padding: 10px;
+    padding: 5px;
     height: 150px;
-    border-radius: 100%;
+    border-radius: 50%;
 }
 
 .about{
