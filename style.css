@@ -25,7 +25,7 @@ header{
     padding: 0;
     font-size: 15px;
     display: flex;
-    width: 60%;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     
@@ -96,6 +96,7 @@ header{
     display: flex;
     justify-content: space-between;
     gap: 5px;
+    flex-wrap: wrap;
     padding: 10px;
 }
 
@@ -178,17 +179,16 @@ header{
 .projContainer{
    display: flex;
    flex-direction: column;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
-.projectTabs{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    
+.projectTabs {
+    gap: 20px;
+
 }
 
 .project{
-
     display: flex;
     border-radius: 10px;
     flex-direction: column;
@@ -202,9 +202,12 @@ header{
     gap: 10px;
 }
 
-.projectSnapshot{
-    padding: 80px;
+.projectSnapshot {
+    padding: clamp(20px, 8vw, 80px); /* Small on mobile, large on desktop */
     border: 1px solid rgba(0, 0, 0, 0.233);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .projecttitle{
@@ -218,11 +221,10 @@ header{
     
 }
 
-.projectTeckstack{
+.projectTeckstack {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* CRITICAL FIX */
     gap: 6px;
-
 }
 
 .projectTeckstack span{
@@ -370,8 +372,8 @@ footer{
     
     }
 
-}
-/* For devices with a minimum width of 992px (Large) */
-@media screen and (min-width: 992px) {
-  
+    .titleContainer {
+        width: 60%; /* Only split the width when the image appears */
+    }
+
 }

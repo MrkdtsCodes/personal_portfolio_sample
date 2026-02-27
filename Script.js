@@ -83,5 +83,82 @@ projectData.forEach(project =>{
 })
 
 techStacklanguage.forEach(techslang =>{
-    techlanguageContainer.innerHTML +=createTechStacks(techslang);
+    techlanguageContainer.innerHTML += createTechStacks(techslang);
 })
+
+
+const CertValues  =[
+  {
+    certName:"Anti-Bribery and Corruption Policy",
+    certplace: "@lhoopa"
+  },
+]
+
+
+
+function CreateCard(values){
+
+
+  const img_link=[
+    './assets/Certificate - ABC - Mark  Andrie Datus.jpg',
+    './assets/Certificate - ABC - Mark  Andrie Datus.jpg'
+
+  ];
+
+  for(let i=0; i <= img_link.length; i++){
+
+    const imageCard = document.createElement('div');
+    imageCard.classlist.add('imageCard')
+
+    const img = document.createElement('img');
+
+
+    img.src = imageLinks[i];
+    img.alt = 'Project photo ' + (i + 1);
+
+    imageCard.appendChild(img);
+  }
+
+  
+  const container = document.getElementById('projectList');
+
+  for(let i = 0; i <= CertValues; i++ ){
+
+    const card = document.createElement('div');
+    card.classList.add('card')
+    //main conatiner ng isang card 
+
+    const imageCard = document.createElement('div');
+    imageCard.classList.add('imageCard')
+
+    const nameCard = document.createElement('div');
+    nameCard.classList.add('nameCard');
+
+    const certificateName = document.createElement('div')
+    certificateName.classList.add('certificateName')
+
+    const certificate_place= document.createElement('div')
+    certificate_place.classList.add('certificate_place')
+
+    nameCard.appendChild(certificateName, certificate_place)
+
+    card.appendChild(imageCard, nameCard);
+
+    container.appendChild(card);
+
+
+  }
+
+
+  
+
+
+
+
+
+
+
+
+
+
+}
