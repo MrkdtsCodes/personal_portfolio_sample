@@ -62,12 +62,14 @@ header{
 .imageContainer{
     width: 40%; 
     display: none;
+
 }
 
 .imageContainer img{
     padding: 5px;
     height: 150px;
     border-radius: 50%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .about{
