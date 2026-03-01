@@ -87,42 +87,49 @@ techStacklanguage.forEach(techslang =>{
 })
 
 
+
 const CertValues  =[
   {
+    images: "./assets/Certifications_folder/Certificate - ABC - Mark  Andrie Datus.jpg",
     certName:"Anti-Bribery and Corruption Policy",
     certplace: "@lhoopa"
   },
+  {
+    images: "./assets/Certifications_folder/spes_cert.jpg",
+    certName:"Spes Acknowledgement Certificate",
+    certplace: "@Pasig City Hall Office"
+  },
+  {
+    images: "./assets/Certifications_folder/Alibaba.png",
+    certName:"Alibaba Masterclass",
+    certplace: "@Pamantasan ng Lungsod ng Pasig"
+  },
+  {
+    images: "./assets/Certifications_folder/day 2.png",
+    certName:"She++ Project Management and CyberSecurity",
+    certplace: "@Pamantasan ng Lungsod ng Pasig"
+  },
+  {
+    images: "./assets/Certifications_folder/designthingking.png",
+    certName:"Shee++ Design Thinking",
+    certplace: "@Pamantasan ng Lungsod ng Pasig"
+  },
+  {
+    images: "./assets/Certifications_folder/leadership.png",
+    certName:"Shee++ leadership",
+    certplace: "@Pamantasan ng Lungsod ng Pasig"
+  },
+
+ 
 ]
 
 
 
 function CreateCard(values){
 
-
-  const img_link=[
-    './assets/Certificate - ABC - Mark  Andrie Datus.jpg',
-    './assets/Certificate - ABC - Mark  Andrie Datus.jpg'
-
-  ];
-
-  for(let i=0; i <= img_link.length; i++){
-
-    const imageCard = document.createElement('div');
-    imageCard.classlist.add('imageCard')
-
-    const img = document.createElement('img');
-
-
-    img.src = imageLinks[i];
-    img.alt = 'Project photo ' + (i + 1);
-
-    imageCard.appendChild(img);
-  }
-
+  const container = document.getElementById('group');
   
-  const container = document.getElementById('projectList');
-
-  for(let i = 0; i <= CertValues; i++ ){
+  for(let i = 0; i < values.length; i++){
 
     const card = document.createElement('div');
     card.classList.add('card')
@@ -138,27 +145,20 @@ function CreateCard(values){
     certificateName.classList.add('certificateName')
 
     const certificate_place= document.createElement('div')
-    certificate_place.classList.add('certificate_place')
+    certificate_place.classList.add('Certificate_place')
 
-    nameCard.appendChild(certificateName, certificate_place)
+    imageCard.innerHTML = `<img src="${values[i].images}" alt="${values[i].certName}">`;
+    certificateName.textContent = values[i].certName;
+    certificate_place.textContent = values[i].certplace
 
-    card.appendChild(imageCard, nameCard);
+    nameCard.append(certificateName, certificate_place)
 
-    container.appendChild(card);
+    card.append(imageCard, nameCard);
 
-
+    container.append(card);
   }
-
-
-  
-
-
-
-
-
-
-
-
-
-
 }
+
+const infiniteValues = [...CertValues, ...CertValues];
+
+CreateCard(infiniteValues);
